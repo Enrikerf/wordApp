@@ -1,0 +1,34 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <div class="actions">
+      <div class="title">{{ entry.word }}</div>
+      <div class="buttons">
+        <ion-icon size="large" name="star-outline"></ion-icon>
+        <ion-icon size="large" (click)="dismissModal()" name="close-circle-outline"></ion-icon>
+      </div>
+    </div>
+
+    <p>pronunciation: {{ entry.pronunciation.all }}</p>
+    <p>frecuency: {{ entry.frequency }}</p>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+  <ion-list>
+    <ion-item
+      *ngFor="let meaning of entry.results; index as i"
+      (click)="toggleItem(i)"
+    >
+      <ion-label>
+        <div>
+          <div class="partOfSpeech">{{ meaning.partOfSpeech }}</div>
+          <div>{{ meaning.definition }}</div>
+        </div>
+        <div *ngIf="isOpen(i)">
+          <div *ngFor="let example of meaning.examples">
+            <h5 class="example">{{ example }}</h5>
+          </div>
+        </div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

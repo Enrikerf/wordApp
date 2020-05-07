@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Búsqueda</ion-title>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="processForm(f)" *ngIf="!isWordChosed">
+    <div class="form-group">
+      <ion-item>
+        <ion-label position="floating">Buscar</ion-label>
+        <ion-input
+          id="wordToSearch"
+          ngModel
+          name="wordToSearch"
+          #wordToSearch="ngModel"
+          class="form-control"
+        ></ion-input>
+      </ion-item>
+    </div>
+  </form>
+  <div *ngIf="!isWordChosed" class="list-content">
+    <ion-list>
+      <ion-list-header>
+        Resultados
+      </ion-list-header>
+      <ion-item (click)="clickWord(word)" *ngFor="let word of searchResult">
+        <ion-label>
+          {{ word }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <app-word
+    [word]="chosenWord"
+    *ngIf="isWordChosed"
+    (dismiss)="removeChosenWord()"
+  ></app-word>
+</ion-content>

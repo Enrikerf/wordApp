@@ -1,0 +1,24 @@
+.partOfSpeech{
+    font-size: small;
+    margin-right: 10px;
+    color: gray;
+}
+.example{
+    font-size: small;
+    margin-left: 20px;
+    color: gray;
+}
+
+.actions{
+    display: flex;
+    .title{
+        font-size: larger;
+        width: 50%;
+    }
+    .buttons{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+}

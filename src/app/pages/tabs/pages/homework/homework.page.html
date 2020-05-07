@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>homework</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #f="ngForm" (ngSubmit)="processForm(f)">
+    <div class="form-group">
+      <ion-item>
+        <ion-label position="floating">Buscar</ion-label>
+        <ion-input
+          id="wordToSearch"
+          ngModel
+          name="wordToSearch"
+          #wordToSearch="ngModel"
+          class="form-control"
+        ></ion-input>
+      </ion-item>
+    </div>
+  </form>
+  <ion-card *ngFor="let entry of myEntries">
+    <ion-card-header>
+      <ion-card-subtitle>{{entry.frequency}}</ion-card-subtitle>
+      <ion-card-title>{{entry.word}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      <ion-button>Review in 3 days</ion-button>
+      <ion-button>Review in tomorrow</ion-button>
+      <ion-button>Details</ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

@@ -1,0 +1,14 @@
+.list-content{
+    height: 100%;
+    overflow-y: scroll;
+}
+.card-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .card-content-button{
+        width: 32%;
+        height: fit-content;
+    }
+    
+}

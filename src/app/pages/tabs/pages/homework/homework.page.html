@@ -19,19 +19,30 @@
       </ion-item>
     </div>
   </form>
-  <ion-card *ngFor="let entry of myEntries">
-    <ion-card-header>
-      <ion-card-subtitle>{{entry.frequency}}</ion-card-subtitle>
-      <ion-card-title>{{entry.word}}</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
-      <ion-button>Review in 3 days</ion-button>
-      <ion-button>Review in tomorrow</ion-button>
-      <ion-button>Details</ion-button>
-    </ion-card-content>
-  </ion-card>
-  
+  <div class="list-content">
+    <ion-card *ngFor="let entry of myEntries">
+      <ion-card-header>
+        <ion-card-subtitle>{{entry.frequency}}</ion-card-subtitle>
+        <ion-card-title>{{entry.word}}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit
+        clean.
+        <div class="card-content">
+          <ion-button class="card-content-button">
+              <ion-label text-wrap>Review in 3 days asdfasdf asdf asdf  asdf</ion-label>
+          </ion-button>
+          <ion-button class="card-content-button">
+              <ion-label text-wrap>Review in 3 days asdfasdf asdf asdf  asdf</ion-label>
+          </ion-button>
+          <ion-button class="card-content-button">
+              <ion-label text-wrap>Review in 3 days asdfasdf asdf asdf  asdf</ion-label>
+          </ion-button>
+
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
